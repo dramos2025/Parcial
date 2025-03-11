@@ -1,2 +1,0 @@
-# Parcial
-Pensamiento algorítmico
