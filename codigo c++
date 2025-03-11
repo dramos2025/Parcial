@@ -1,0 +1,41 @@
+#include <iostream>
+#include <iomanip>  // Para formatear la salida con dos decimales
+using namespace std;
+
+int main() {
+    // Variable para almacenar la distancia al objetivo
+    double distancia;
+
+    // Solicitar al usuario la distancia al objetivo
+    cout << "Introduce la distancia al objetivo (metros): ";
+    cin >> distancia;
+
+    // Validar que la distancia sea un número positivo
+    if (distancia <= 0) {
+        cout << "La distancia debe ser un número positivo." << endl;
+        return 0;  // Terminar el programa si la distancia no es válida
+    }
+
+    // Velocidades de los proyectiles
+    const double velocidad_fuego = 120;  // Velocidad del proyectil de Fuego (m/s)
+    const double velocidad_hielo = 100;  // Velocidad del proyectil de Hielo (m/s)
+    const double velocidad_veneno = 80;  // Velocidad del proyectil de Veneno (m/s)
+
+    // Calcular el tiempo de impacto para cada proyectil
+    double tiempo_fuego = distancia / velocidad_fuego;
+    double tiempo_hielo = distancia / velocidad_hielo;
+    double tiempo_veneno = distancia / velocidad_veneno;
+
+    // Mostrar los resultados con dos decimales de precisión
+    cout << fixed << setprecision(2);  // Formatear la salida a dos decimales
+
+    // Mostrar el tiempo de impacto para el proyectil de Fuego
+    cout << "Tiempo de impacto (Fuego): " << tiempo_fuego << " segundos" << endl;
+
+    // Mostrar el tiempo de impacto para el proyectil de Hielo
+    cout << "Tiempo de impacto (Hielo): " << tiempo_hielo << " segundos" << endl;
+
+    // Mostrar el tiempo de impacto para el proyectil de Veneno
+    cout << "Tiempo de impacto (Veneno): " << tiempo_veneno << " segundos" << endl;
+
+    return 0;  // Indicar que el programa terminó correctamente
