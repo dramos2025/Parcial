@@ -1,0 +1,20 @@
+# Definir las velocidades de los proyectiles
+proyectiles = { "Fuego":120, "Hielo": 100, "Veneno": 80}
+# Definir la distancia al objetivo
+d = int(input("Ingrese la distancia al objetivo en metros: "))
+# Si los proyectiles son validos o no son validos y obtener la velocidad en m/s 
+def obtener_velocidad(proyectil):
+    return proyectiles.get(proyectil, None)
+# calcular la velocidad y el tiempo de impacto del proyectil   
+def calcular_tiempo(proyectil, distancia):
+    velocidad = obtener_velocidad(proyectil)
+    if velocidad is not None:  # Verifica si la velocidad es válida
+        return round(distancia / velocidad,2)
+    return "No se puede calcular"
+# Resultado final
+proyectiles_prueba = ["Fuego", "Hielo", "Veneno", "Rayo"]
+for p in proyectiles_prueba:
+    tiempo = calcular_tiempo(p, d)
+    velocidad = obtener_velocidad(p)
+    print(f"{p}: {velocidad if velocidad is not None else 'Proyectil no válido'} m/s, Tiempo de impacto: {tiempo} s")
+    
